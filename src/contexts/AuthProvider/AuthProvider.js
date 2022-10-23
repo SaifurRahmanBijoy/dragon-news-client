@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -36,6 +37,10 @@ const AuthProvider = ({ children }) => {
     return updateProfile(auth.currentUser, profile);
   };
 
+  const verifyEmail = () => {
+    return sendEmailVerification(auth.currentUser);
+  };
+
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
@@ -60,6 +65,7 @@ const AuthProvider = ({ children }) => {
     createUser,
     signIn,
     updateUserProfile,
+    verifyEmail,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
