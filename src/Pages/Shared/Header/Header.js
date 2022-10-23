@@ -66,7 +66,7 @@ const Header = () => {
                 </>
               )}
             </Nav>
-            <Nav className="ms-3">
+            <Link to='/profile' className="ms-3">
               {user?.photoURL ? (
                 <Image
                   style={{width: "30px", border: "1px solid black" }}
@@ -76,7 +76,7 @@ const Header = () => {
               ) : (
                 <FaUser></FaUser>
               )}
-            </Nav>
+            </Link>
           </Nav>
           <div className="d-lg-none">
             <LeftSideNav></LeftSideNav>
