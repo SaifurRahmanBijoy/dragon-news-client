@@ -36,8 +36,8 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link>All News</Nav.Link>
           </Nav>
-          <Nav>
-            <Nav.Link className="text-dark">
+          <Nav className="my-2 align-items-center">
+            <Nav className="text-dark mb-0">
               {user?.uid ? (
                 <>
                   <Button
@@ -65,18 +65,18 @@ const Header = () => {
                   </Link>
                 </>
               )}
-            </Nav.Link>
-            <Nav.Link eventKey={2}>
+            </Nav>
+            <Nav className="ms-3">
               {user?.photoURL ? (
                 <Image
-                  style={{ height: "30px", border: "1px solid black" }}
+                  style={{width: "30px", border: "1px solid black" }}
                   roundedCircle
                   src={user?.photoURL}
                 />
               ) : (
                 <FaUser></FaUser>
               )}
-            </Nav.Link>
+            </Nav>
           </Nav>
           <div className="d-lg-none">
             <LeftSideNav></LeftSideNav>

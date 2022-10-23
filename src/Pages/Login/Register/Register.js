@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import toast from 'react-hot-toast';
 
 const Register = () => {
   const [accepted, setAccepted] = useState(false);
@@ -27,6 +28,7 @@ const Register = () => {
         form.reset();
         handleUpdateUserProfile(name, photoURL);
         handleVerifyEmail();
+        toast.success('Please verify your email')
       })
       .catch((error) => {
         console.error(error);
