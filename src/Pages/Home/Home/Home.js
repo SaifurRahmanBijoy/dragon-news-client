@@ -1,11 +1,17 @@
-import React from 'react';
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import NewsSummaryCard from "../../Shared/NewsSummaryCard/NewsSummaryCard";
 
 const Home = () => {
-    return (
-        <div>
-            <h2>This is Home!</h2>
-        </div>
-    );
+  const allNews = useLoaderData();
+  return (
+    <div>
+      <h2>Dragon News Home ({allNews.length} news so far)</h2>
+      {allNews.map((news) => (
+        <NewsSummaryCard key={news._id} news={news} />
+      ))}
+    </div>
+  );
 };
 
 export default Home;
