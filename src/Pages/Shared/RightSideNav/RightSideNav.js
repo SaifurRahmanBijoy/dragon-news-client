@@ -33,19 +33,19 @@ const RightSideNav = () => {
         <Button
           onClick={handleGoogleSignIn}
           variant="outline-primary"
-          className="mb-2"
+          className="mb-2 shadow-sm"
         >
           {" "}
           <FaGoogle></FaGoogle> Login with Google{" "}
         </Button>
-        <Button variant="outline-dark">
+        <Button className="shadow-sm" variant="outline-dark">
           {" "}
           <FaGithub></FaGithub> Login with GitHub
         </Button>
       </ButtonGroup>
       <div className="mb-3">
         <h5>Find us on</h5>
-        <ListGroup>
+        <ListGroup className='shadow-sm'>
           <ListGroup.Item className="mb-">
             <FaFacebook /> Facebook
           </ListGroup.Item>
@@ -63,7 +63,7 @@ const RightSideNav = () => {
           </ListGroup.Item>
         </ListGroup>
       </div>
-      <div>
+      <div className="shadow-sm">
         <BrandCarousel></BrandCarousel>
       </div>
     </div>

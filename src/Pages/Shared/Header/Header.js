@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <Navbar
-      className="mb-4"
+      className="mb-3 shadow-sm sticky-top"
       collapseOnSelect
       expand="lg"
       bg="light"

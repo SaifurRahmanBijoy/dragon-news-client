@@ -8,11 +8,11 @@ import RightSideNav from "../Pages/Shared/RightSideNav/RightSideNav";
 
 const Main = () => {
   return (
-    <div>
+    <div className="bg-light">
       <Header></Header>
       <Container>
         <Row>
-          <Col lg="2" className="d-none d-lg-block">
+          <Col lg="2" className="d-none shadow-sm p-2 d-lg-block">
             <LeftSideNav></LeftSideNav>
           </Col>
           <Col lg="7">
