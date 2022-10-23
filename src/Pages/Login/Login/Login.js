@@ -52,9 +52,7 @@ const Login = () => {
       <Button variant="primary" type="submit">
         Submit
       </Button>
-      <Form.Text className="text-danger d-block">
-        We'll never share your email with anyone else.
-      </Form.Text>
+      <Form.Text className="text-danger d-block">{error}</Form.Text>
     </Form>
   );
 };
