@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Spinner } from "react-bootstrap";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
@@ -9,7 +10,14 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <>
-        <h2 className="text-center text-warning">Loading.....</h2>
+        <h2 className="text-center text-warning">
+          Loading.....
+          <Spinner
+            className="ms-3"
+            animation="border"
+            variant="warning"
+          ></Spinner>
+        </h2>
       </>
     );
   }
