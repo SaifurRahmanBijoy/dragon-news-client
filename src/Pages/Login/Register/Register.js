@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Register = () => {
+  const [accepted, setAccepted] = useState(false);
   const [error, setError] = useState("");
   const { createUser } = useContext(AuthContext);
 
@@ -27,6 +29,10 @@ const Register = () => {
         console.error(error);
         setError(error.message);
       });
+  };
+
+  const handleAccepted = (event) => {
+    setAccepted(event.target.checked);
   };
   return (
     <Form onSubmit={handleSubmit} className="shadow-sm p-3">
@@ -60,9 +66,17 @@ const Register = () => {
         />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
+        <Form.Check
+          type="checkbox"
+          onClick={handleAccepted}
+          label={
+            <>
+              Accept <Link to="/terms">Terms and Conditions</Link>
+            </>
+          }
+        />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" disabled={!accepted}>
         Submit
       </Button>
       <Form.Text className="text-danger d-block">{error}</Form.Text>
