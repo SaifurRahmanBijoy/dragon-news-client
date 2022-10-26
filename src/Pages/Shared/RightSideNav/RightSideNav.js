@@ -21,10 +21,12 @@ const RightSideNav = () => {
   const googleProvider = new GoogleAuthProvider();
 
   const handleGoogleSignIn = () => {
-    providerLogin(googleProvider).then((res) => {
-      const user = res.user;
-      console.log(user).catch((error) => console.error(error));
-    });
+    providerLogin(googleProvider)
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -45,7 +47,7 @@ const RightSideNav = () => {
       </ButtonGroup>
       <div className="mb-3">
         <h5>Find us on</h5>
-        <ListGroup className='shadow-sm'>
+        <ListGroup className="shadow-sm">
           <ListGroup.Item className="mb-">
             <FaFacebook /> Facebook
           </ListGroup.Item>
