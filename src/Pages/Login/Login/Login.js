@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -11,6 +12,8 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+
+  useTitle("Login");
 
   const handleSubmit = (event) => {
     event.preventDefault();
